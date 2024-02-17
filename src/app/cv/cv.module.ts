@@ -9,6 +9,6 @@ import { CvOverviewComponent } from './cv-overview/cv-overview.component';
   imports: [
     CommonModule, CvOverviewComponent
   ],
-  exports: [CvOverviewComponent]
+  exports: [CvOverviewComponent, CommonModule]
 })
 export class CvModule { }

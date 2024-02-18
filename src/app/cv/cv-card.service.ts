@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CvCard } from './cv-card';
 import { cvCardData } from '../../assets/cv-cards';
+import { CvCardType } from './cv-card-type.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,11 @@ export class CvCardService {
     this.cvCards = cvCardData;
    }
 
-  getCvCards(): CvCard[] {
-    return this.cvCards;
+  getExperienceCvCards(): CvCard[] {
+    return this.cvCards.filter(x => x.type == CvCardType.Experience);
+  }
+
+  getEducationCvCards(): CvCard[] {
+    return this.cvCards.filter(x => x.type == CvCardType.Education);
   }
 }

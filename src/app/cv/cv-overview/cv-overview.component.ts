@@ -3,11 +3,12 @@ import { Component } from '@angular/core';
 import { CvCardComponent } from '../cv-card/cv-card.component';
 import { CvCard } from '../cv-card';
 import { ProfileCardComponent } from '../profile-card/profile-card.component';
+import { AboutCardComponent } from '../about-card/about-card.component';
 
 @Component({
   selector: 'app-cv-overview',
   standalone: true,
-  imports: [CvCardComponent, ProfileCardComponent],
+  imports: [CvCardComponent, ProfileCardComponent, AboutCardComponent],
   templateUrl: './cv-overview.component.html',
   styleUrl: './cv-overview.component.css'
 })

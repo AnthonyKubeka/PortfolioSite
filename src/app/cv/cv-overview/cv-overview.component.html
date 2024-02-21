@@ -1,14 +1,20 @@
-<app-profile-card></app-profile-card>
-
-<section class="items-center px-8 py-12 mx-auto max-w-7xl lg:px-16 md:px-12 lg:py-24">
-  <h2 class="text-xl font-semibold mb-4">Experience</h2>
-  @for (cvCard of experienceCvCards; track cvCard) {
-    <app-cv-card [cvCard]="cvCard"></app-cv-card>
-  }
-</section>
-<section class="items-center px-8 py-12 mx-auto max-w-7xl lg:px-16 md:px-12 lg:py-24">
-  <h2 class="text-xl font-semibold mb-4">Education</h2>
-  @for (cvCard of educationCvCards; track cvCard) {
-    <app-cv-card [cvCard]="cvCard"></app-cv-card>
-  }
-</section>
+<div class="grid grid-cols-2">
+ <div class="order-1 flex flex-col"><!--sidebar-->
+  <app-profile-card></app-profile-card>
+  <app-about-card></app-about-card>
+  </div>
+  <div class="order-2">
+    <div>
+      <h2 class="text-xl font-semibold mb-4">Experience</h2>
+      @for (cvCard of experienceCvCards; track cvCard) {
+        <app-cv-card [cvCard]="cvCard"></app-cv-card>
+      }
+    </div>
+    <div>
+      <h2 class="text-xl font-semibold mb-4">Education</h2>
+      @for (cvCard of educationCvCards; track cvCard) {
+        <app-cv-card [cvCard]="cvCard"></app-cv-card>
+      }
+    </div>
+  </div>
+</div>

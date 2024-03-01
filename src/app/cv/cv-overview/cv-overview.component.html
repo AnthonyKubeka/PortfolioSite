@@ -1,20 +1,30 @@
-<div class="grid grid-cols-2">
- <div class="order-1 flex flex-col"><!--sidebar-->
-  <app-profile-card></app-profile-card>
-  <app-about-card></app-about-card>
+<div class="container mx-auto p-8 flex">
+  <div class="md:w-1/3 md:order-1">
+      <app-profile-card></app-profile-card>
+      <app-about-card></app-about-card>
   </div>
-  <div class="order-2">
-    <div>
+  <div class="md:w-2/3 order-2 pl-8">
+    <div class="bg-white p-4 mb-4 shadow-lg">
       <h2 class="text-xl font-semibold mb-4">Experience</h2>
       @for (cvCard of experienceCvCards; track cvCard) {
         <app-cv-card [cvCard]="cvCard"></app-cv-card>
       }
     </div>
-    <div>
+    <div class="bg-white p-4 shadow-lg">
       <h2 class="text-xl font-semibold mb-4">Education</h2>
       @for (cvCard of educationCvCards; track cvCard) {
         <app-cv-card [cvCard]="cvCard"></app-cv-card>
       }
     </div>
-  </div>
+    <div class="bg-white p-4 mt-4 shadow-lg">
+      <h2 class="text-xl font-semibold mb-4">Certifications</h2>
+        <div class="m-2 max-w-max grid grid-cols-1">
+          <div class="bg-white p-4 rounded-lg shadow-md">
+            <div class="flex gap-2">
+                <h3 class="text-lg font-semibold mb-1">Microsoft AZ-900 (Azure Fundamentals)</h3>
+            </div>
+        </div>
+      </div>
+    </div>
 </div>
+

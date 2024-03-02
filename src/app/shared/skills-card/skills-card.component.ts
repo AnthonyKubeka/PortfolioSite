@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Technology } from '../technology';
 
 @Component({
   selector: 'app-skills-card',
@@ -8,5 +9,8 @@ import { Component, Input } from '@angular/core';
   styleUrl: './skills-card.component.css'
 })
 export class SkillsCardComponent {
-  @Input() description: string | undefined;
+  @Input() technology?: Technology;
+
+  constructor() {
+  }
 }

@@ -1,10 +1,28 @@
+<div class="m-2 max-w-max">
+  <div class="bg-white p-4 rounded-lg shadow-md">
+    <div class="bg-cover">
+      <img class="rounded-lg"
+      alt="{{projectCard?.projectName}}"
+      >
+    </div>
+    <div>
+      <h5 class="text-left uppercase font-extrabold">{{projectCard?.projectType}}</h5>
+      <div class="flex flex-row">
+        <h1 class="font-bold text-xl mb-2">{{projectCard?.projectName}}</h1>
+        <a href="{{projectCard?.repoUrl}}"><ion-icon class="p-2" name="logo-github"></ion-icon></a>
+      </div>
 
-
-<div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700">
-  <h5 class="mb-3 text-base font-semibold text-gray-900 md:text-xl dark:text-white">
-  {{projectCard?.projectName}}
-  </h5>
-  <p class="text-sm font-normal text-gray-500 dark:text-gray-400">{{projectCard?.projectDescription}}</p>
-  <div>
-  </div>
+      <div class="flex">
+        @for (technology of projectCard?.technologies; track technology) {
+          <app-skills-card [technology]="technology"></app-skills-card>
+        }
+      </div>
+      <p class="text-left mb-4">{{projectCard?.projectDescription}}</p>
+      <div>
+        <a href="{{projectCard?.projectUrl}}" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white p-1 border border-blue-500 hover:border-transparent rounded">
+          Try it out!
+        </a>
+      </div>
+    </div>
+    </div>
   </div>

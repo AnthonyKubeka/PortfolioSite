@@ -1,3 +1,4 @@
+import { StaticDataService } from './../../cv/static-data.service';
 import { Component } from '@angular/core';
 import { IProjectCard } from '../project-card/project-card';
 import { ProjectCardComponent } from '../project-card/project-card.component';
@@ -11,7 +12,8 @@ import { ProjectCardComponent } from '../project-card/project-card.component';
 })
 export class ProjectsOverviewComponent {
   projectCards:  IProjectCard[] = [];
-constructor(){
-  this.projectCards = new Array<IProjectCard>(3);
+constructor(private staticDataService: StaticDataService){
+  this.staticDataService = staticDataService;
+  this.projectCards = this.staticDataService.getProjectData();
 }
 }

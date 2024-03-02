@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CvCardService } from './cv-card.service';
+import { StaticDataService } from './static-data.service';
 
-describe('CvCardService', () => {
-  let service: CvCardService;
+describe('StaticDataService', () => {
+  let service: StaticDataService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(CvCardService);
+    service = TestBed.inject(StaticDataService);
   });
 
   it('should be created', () => {

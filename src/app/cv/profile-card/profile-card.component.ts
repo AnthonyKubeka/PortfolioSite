@@ -1,16 +1,18 @@
+import { StaticDataService } from './../static-data.service';
 import { Component } from '@angular/core';
-import { SkillsCardComponent } from '../skills-card/skills-card.component';
+import { SharedModule } from '../../shared/shared.module';
+import { Technology } from '../../shared/technology';
 
 @Component({
   selector: 'app-profile-card',
   standalone: true,
-  imports: [SkillsCardComponent],
+  imports: [SharedModule],
   templateUrl: './profile-card.component.html',
   styleUrl: './profile-card.component.css'
 })
 export class ProfileCardComponent {
-  listOfSkills: Set<string>;
-  constructor(){
-    this.listOfSkills = new Set<string>(['C#', 'JavaScript', 'Typescript', 'SQL', 'Angular',  '.NET', '.NET Framework', 'Azure', 'Azure DevOps']);
+  technologies: Technology[] = [];
+  constructor(private staticDataService: StaticDataService){
+    this.technologies = this.staticDataService.getTechnologies();
   }
 }

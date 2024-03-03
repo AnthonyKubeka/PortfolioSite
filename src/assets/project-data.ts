@@ -54,7 +54,8 @@ export const projectData: IProjectCard[] = [
     projectName: 'FileName Tagger',
     projectDescription: 'A WPF Desktop App to tag filenames with custom tags',
     projectType:'Desktop App',
-    technologies: [technologyMap['WPF'], technologyMap['C#']]
+    technologies: [technologyMap['WPF'], technologyMap['C#']],
+    repoUrl: 'https://github.com/AnthonyKubeka/FileNameTagger'
   }
 ]
 

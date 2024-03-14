@@ -4,11 +4,12 @@ import { CvCardComponent } from '../cv-card/cv-card.component';
 import { CvCard } from '../cv-card';
 import { ProfileCardComponent } from '../profile-card/profile-card.component';
 import { AboutCardComponent } from '../about-card/about-card.component';
+import { CvSectionCardComponent } from '../cv-section-card/cv-section-card.component';
 
 @Component({
   selector: 'app-cv-overview',
   standalone: true,
-  imports: [CvCardComponent, ProfileCardComponent, AboutCardComponent],
+  imports: [CvCardComponent, ProfileCardComponent, AboutCardComponent, CvSectionCardComponent],
   templateUrl: './cv-overview.component.html',
   styleUrl: './cv-overview.component.css'
 })

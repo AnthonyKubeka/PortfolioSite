@@ -1,5 +1,8 @@
 <div class="min-h-screen flex flex-col">
-  <app-header-nav></app-header-nav>
+  <app-header-nav (sideBarOpen)="toggleSidebar($event)"></app-header-nav>
+  @if(sideBarOpen){
+    <app-sidebar (showSidebar)="toggleSidebar($event)" class="md:hidden z-10"></app-sidebar>
+  }
   <div class="flex-grow">
     <router-outlet></router-outlet>
   </div>

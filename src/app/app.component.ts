@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CoreModule } from './core/core.module';
 import { ProjectsModule } from './projects/projects.module';
-import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -12,5 +11,10 @@ import { BrowserModule } from '@angular/platform-browser';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'portfolio';
+  title = 'Welcome To Anthony Kubeka\'s Portfolio!';
+  sideBarOpen: boolean = false;
+
+  toggleSidebar($event: any) {
+    this.sideBarOpen = !this.sideBarOpen;
+  }
 }

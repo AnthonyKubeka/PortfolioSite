@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component, ViewChild } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 
@@ -11,13 +11,9 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
   styleUrl: './header-nav.component.css',
 })
 export class HeaderNavComponent {
-  sideBarOpen: boolean = false;
-
-  handleShowSidebarEvent($event: any) {
-    this.toggleSidebar();
-  }
+  @Output() sideBarOpen = new EventEmitter<boolean>();
 
   toggleSidebar() {
-    this.sideBarOpen = !this.sideBarOpen;
+    this.sideBarOpen.emit(true);
   }
 }

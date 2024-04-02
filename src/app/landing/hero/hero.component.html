@@ -1,16 +1,28 @@
 
-<section>
-  <div class="items-center px-8 py-12 mx-auto max-w-7xl lg:px-16 md:px-12 lg:py-24">
-    <div class="w-full lg:p-10 max-auto">
-      <div class="justify-center text-center w-full mx-auto">
+  <div class="px-8 py-12 mx-auto lg:px-16 md:px-12 lg:py-24">
+    <div class="lg:p-10 max-auto">
+      <div class="text-center mx-auto">
         <p class="mt-8 text-5xl font-medium tracking-tighter text-black">
          Hi there, I'm Anthony
         </p>
-        <p class="max-w-xl mx-auto mt-4 text-lg tracking-tight text-gray-600">
+        <p class="mx-auto mt-4 text-lg text-gray-600 mb-4">
           Software Engineer
         </p>
       </div>
-      <app-tech-stack-list class="text-start"></app-tech-stack-list>
+      <app-tech-stack-list class="text-center"></app-tech-stack-list>
+      <div class="flex flex-row justify-center">
+
+        <a [routerLink]="['/projects']" class="hover:bg-blue-600 bg-white shadow-lg max-w-min rounded-md my-8 mx-4 flex items-center">
+          <span class="font-extrabold uppercase p-4">My Projects</span>
+          <ion-icon name="briefcase-outline" size="large" class="p-4"></ion-icon>
+        </a>
+
+        <a [routerLink]="['/cv']" class="hover:bg-blue-600 bg-white shadow-lg max-w-min rounded-md my-8 mx-4 flex items-center">
+          <span class="font-extrabold uppercase p-4">My CV</span>
+          <ion-icon name="document-text-outline" size="large" class="p-4"></ion-icon>
+        </a>
+
+      </div>
+
     </div>
   </div>
-</section>

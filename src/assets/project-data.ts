@@ -56,6 +56,14 @@ export const projectData: IProjectCard[] = [
     projectType:'Desktop App',
     technologies: [technologyMap['WPF'], technologyMap['C#']],
     repoUrl: 'https://github.com/AnthonyKubeka/FileNameTagger'
+  },
+  {
+    projectName: 'Todays Workout',
+    projectDescription: 'A workout / exercise session tracker, replace your Notes app with this! Angular Frontend, hitting a custom Backend API (Azure App Service).',
+    projectType: 'Web App',
+    technologies: [technologyMap['C#'], technologyMap['Azure'], technologyMap['Angular']],
+    repoUrl: 'https://github.com/AnthonyKubeka/TodaysWorkout',
+    projectUrl: 'https://todays-workout.web.app/'
   }
 ]
 

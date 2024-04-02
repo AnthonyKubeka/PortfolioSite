@@ -11,7 +11,7 @@ const experienceCvCards: ExperienceCvCard[] = [
     place: 'Entelect',
     duties: ['Provided mentorship to less experienced software engineers on the team.',
              'Worked on Angular / Angular Material frontend, with heavy emphasis on RxJS for event handling.',
-             'Backend API in C# and .NET 6 initially, recently led a migration to .NET 8. Worked with XUnit and Moq for unit testing.',
+             'Backend REST API in C# and .NET 6. Worked with XUnit and Moq for unit testing.',
              'Got exposure to Azure Data Factory pipelines for data processing and worked on several features to update, and write new pipelines and SQL logic for financial data transformation.'],
     client: 'Ninety One'
   },

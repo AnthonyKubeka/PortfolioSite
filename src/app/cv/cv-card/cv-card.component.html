@@ -12,10 +12,10 @@
         </span>
       </div>
     </div>
-    <ul *ngIf="experienceCvCard" class="list-none ml-4">
+    <ul *ngIf="experienceCvCard" class="list-disc ml-4 space-y-1">
       <li *ngFor="let duty of experienceCvCard?.duties" [innerHtml]="duty"></li>
     </ul>
-    <ul *ngIf="educationCvCard" class="list-none ml-4">
+    <ul *ngIf="educationCvCard" class="list-disc ml-4">
       <li *ngFor="let subject of educationCvCard?.subjects" [innerHtml]="subject"></li>
     </ul>
   </div>

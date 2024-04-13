@@ -1,12 +1,12 @@
   <div class="px-8 py-12 mx-auto max-w-7xl lg:px-16 md:px-12 lg:py-24">
     <div class="w-full lg:p-10 max-auto">
-      <div class="justify-center text-center w-full mx-auto">
-        <p class="mt-8 text-5xl font-medium tracking-tighter text-black">
+      <div class="text-center w-full mx-auto">
+        <p class="my-4 text-5xl font-medium text-black">
          Projects
         </p>
       </div>
     </div>
-    <ul class="flex flex-row justify-center">
+    <ul class="flex flex-col justify-center md:flex-row">
       @for (projectCard of projectCards; track projectCard){
         <li><app-project-card [projectCard]="projectCard"></app-project-card></li>
       }

@@ -13,7 +13,6 @@ import { Technology } from '../shared/technology';
 export class StaticDataService {
   private cvCards: CvCard[] = [];
   private projectData: IProjectCard[] = [];
-  private technologyMap: {[key: string]: Technology} = {};
   constructor() {
     this.cvCards = cvCardData;
     this.projectData = projectData;

@@ -9,11 +9,14 @@ const experienceCvCards: ExperienceCvCard[] = [
     heading: 'Intermediate Software Engineer',
     startDate: new Date('January 1, 2023'),
     place: 'Entelect',
-    duties: ['Provided mentorship to less experienced software engineers on the team.',
-             'Worked on Angular / Angular Material frontend, with heavy emphasis on RxJS for event handling.',
-             'Backend REST API in C# and .NET 6. Worked with XUnit and Moq for unit testing.',
-             'Got exposure to Azure Data Factory pipelines for data processing and worked on several features to update, and write new pipelines and SQL logic for financial data transformation.'],
-    client: 'Ninety One'
+    duties: ['Worked on Angular front-end and .NET Core back-end for Ninety One\'s Investment Platform.',
+             'Drove customer growth by implementing REST API endpoints and Angular components with RxJS for event handling to decrease rejection rates of investment transactions on Ninety One\'s investment platform.',
+             'Improved Ninety One\'s business efficiency by implementing a full-stack feature to allow manual investment instructions to be submitted via the web, using Azure Service Bus and Function App, reducing the need for manual quality control.',
+             'Investigated and resolved production issues with critical investment instructions in Ninety One\'s Azure CosmosDB database and Function Apps under time pressure.',
+             'Mitigated business risk by implementing critical bug fixes for the instruction investment process as soon as these were discovered.',
+             'Improved code coverage for the instruction investment process by writing unit tests for legacy C# code using XUnit and Moq.',
+             'Mentored junior engineers on the team in terms of SOLID principles, best practices and solution design.'],
+    client: 'Ninety One Investments'
   },
   {
     type: CvCardType.Experience,
@@ -21,11 +24,12 @@ const experienceCvCards: ExperienceCvCard[] = [
     startDate: new Date('January 1, 2021'),
     place: 'Entelect',
     endDate: new Date('December 31, 2022'),
-    duties: ['Significantly contributed to the development of EasyEquities\' pension fund platform, RISE, by implementing features including - buying and selling holdings, withdrawing pension funds, managing pension funds for individuals and corporates.',
-              'Utilized Angular for frontend development, adhering to the Model-View-ViewModel pattern.',
-              'Developed and maintained the backend API using C# and .NET Framework, employing Entity Framework for object-relational mapping and NUnit for unit testing.',
-              'Adopted a database-first approach for SQL Server, overseeing data structure alterations within the database script project to facilitate seamless deployments.',
-              '<strong>Key feature</strong>: Implemented integration with SARS for automatic submission of tax forms and claim withdrawals'],
+    duties: ['Enabled the milestone launch of EasyEquities\' pension fund platform, RISE, by completing necessary functionality as full-stack features.',
+              'Added Reactive Angular Forms to allow for capturing of essential data for adding pension funds and companies to the system.',
+              'Implemented an automatic process using SignalR, NServiceBus and SQL Server stored procedures to bulk load thousands of members onto the system.',
+              'Wrote several SQL Server stored procedures to transform SARS data per integration allowing automatic submission of tax forms for claim withdrawals.',
+              'Used Azure App Insights to investigate and resolve production issues with the claims withdrawal process under time pressure.',
+              'Improved code coverage for the claims withdrawal process by writing unit tests for C# code using NUnit and Moq.'],
     client: 'EasyEquities'
   }
 ]

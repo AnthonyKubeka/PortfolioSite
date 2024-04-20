@@ -33,6 +33,10 @@ export const technologyMap : {[key: string]: Technology} = {
   'SQL Server': {
     description: 'SQL Server',
     bgColour: 'bg-blue-300'
+  },
+  'RxJS':{
+    description: 'RxJS',
+    bgColour: 'bg-blue-300'
   }
 };
 
@@ -45,19 +49,19 @@ export const projectData: IProjectCard[] = [
    technologies: [technologyMap['Angular'], technologyMap['Typescript']],
    repoUrl: 'https://github.com/AnthonyKubeka/PortfolioSite'
   },
-  {
-    projectName: 'FileName Tagger',
-    projectDescription: 'A WPF Desktop App to tag filenames with custom tags.',
-    projectType:'Desktop App',
-    technologies: [technologyMap['WPF'], technologyMap['C#']],
-    repoUrl: 'https://github.com/AnthonyKubeka/FileNameTagger',
-    projectUrl: 'https://github.com/AnthonyKubeka/FileNameTagger'
-  },
+  // {
+  //   projectName: 'FileName Tagger',
+  //   projectDescription: 'A WPF Desktop App to tag filenames with custom tags.',
+  //   projectType:'Desktop App',
+  //   technologies: [technologyMap['WPF'], technologyMap['C#']],
+  //   repoUrl: 'https://github.com/AnthonyKubeka/FileNameTagger',
+  //   projectUrl: 'https://github.com/AnthonyKubeka/FileNameTagger'
+  // }, todo: Add back
   {
     projectName: 'Today\'s Workout',
-    projectDescription: 'A workout / exercise session tracker, replace your Notes app with this! Angular Frontend, hitting a custom Backend API (Azure App Service).',
+    projectDescription: 'A workout / exercise session tracker, allowing you to track exercise sets, reps and intensity, output your results or copy to clipboard. This project uses an Angular Frontend with RxJS for in-memory store and a Backend API (Azure App Service) for storing exercises names / added exercise names.',
     projectType: 'Web App',
-    technologies: [technologyMap['C#'], technologyMap['Azure'], technologyMap['Angular'], technologyMap['.NETCore']],
+    technologies: [technologyMap['C#'], technologyMap['Azure'], technologyMap['Angular'], technologyMap['RxJS'], technologyMap['.NETCore']],
     repoUrl: 'https://github.com/AnthonyKubeka/TodaysWorkout',
     projectUrl: 'https://todays-workout.web.app/'
   }

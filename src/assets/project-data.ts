@@ -59,7 +59,7 @@ export const projectData: IProjectCard[] = [
   // }, todo: Add back
   {
     projectName: 'Today\'s Workout',
-    projectDescription: 'A workout / exercise session tracker, allowing you to track exercise sets, reps and intensity, output your results or copy to clipboard. This project uses an Angular Frontend with RxJS for in-memory store and a Backend API (Azure App Service) for storing exercises names / added exercise names.',
+    projectDescription: 'A workout / exercise session tracker, allowing you to track exercise sets, reps and intensity, output your results or copy to clipboard. This project uses an Angular Frontend with RxJS for in-memory store and a Backend API (Azure App Service) for storing / adding exercises names.',
     projectType: 'Web App',
     technologies: [technologyMap['C#'], technologyMap['Azure'], technologyMap['Angular'], technologyMap['RxJS'], technologyMap['.NETCore']],
     repoUrl: 'https://github.com/AnthonyKubeka/TodaysWorkout',

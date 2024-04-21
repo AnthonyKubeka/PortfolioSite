@@ -1,4 +1,4 @@
-<div class="min-h-screen flex flex-col">
+<div class="min-h-screen flex flex-col dark:bg-gray-900">
   <app-header-nav (sideBarOpen)="toggleSidebar($event)"></app-header-nav>
   @if(sideBarOpen){
     <app-sidebar (showSidebar)="toggleSidebar($event)" class="md:hidden z-10"></app-sidebar>

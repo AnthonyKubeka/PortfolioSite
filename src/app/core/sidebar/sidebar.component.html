@@ -1,23 +1,31 @@
-<div class="fixed inset-y-0 right-0 flex w-1/2 pl-10">
+<div class="dark:text-white fixed inset-y-0 right-0 flex w-1/2 pl-10">
   <div class="pointer-events-auto relative w-screen max-w-md">
-    <div class="flex h-full flex-col bg-white py-6 shadow-xl">
+    <div class="flex h-full flex-col bg-white dark:bg-gray-800 py-6 shadow-xl">
       <div class="px-4 flex justify-end">
-        <button class="text-gray-500 hover:text-black focus:outline-none focus:text-black" (click)="toggleSidebar()">
+        <button class="hover:text-gray-500" (click)="toggleSidebar()">
           <ion-icon name="close-outline"></ion-icon>
         </button>
       </div>
 
       <div>
-        <ul class="space-y-2 list-none">
+        <ul class="px-2 space-y-2 list-none">
           <li>
-            <a [routerLink]="['/projects']" routerLinkActive="text-blue-600" class="px-2 py-8 text-sm text-gray-500 hover:text-cyan-200">
+            <a [routerLink]="['/projects']" routerLinkActive="text-gray-500" class="py-8 text-sm hover:text-gray-500">
               Projects
             </a>
           </li>
           <li>
-            <a [routerLink]="['/cv']" routerLinkActive="text-blue-600" class="px-2 py-8 text-sm text-gray-500 hover:text-cyan-200">
+            <a [routerLink]="['/cv']" routerLinkActive="text-gray-500" class="py-8 text-sm hover:text-gray-500">
               CV
             </a>
+          </li>
+          <li>
+            <ng-container *ngIf="!isDarkModeOn">
+              <ng-icon (click)="toggleDarkMode()" class="hover:text-gray-400" name="ionBulbOutline"></ng-icon>
+            </ng-container>
+            <ng-container *ngIf="isDarkModeOn">
+              <ng-icon (click)="toggleDarkMode()" class="hover:text-gray-400" name="ionBulbSharp"></ng-icon>
+            </ng-container>
           </li>
         </ul>
       </div>

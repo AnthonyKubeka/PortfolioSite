@@ -1,10 +1,8 @@
-      <div class="bg-white shadow-lg rounded-md mb-4">
+      <div class="shadow-lg rounded-md mb-4">
           <img class="size-auto h-12 rounded-md mx-auto" src="../../assets/ProfessionalProfilePicture2024.png" alt="Anthony Kubeka">
           <div class="p-2">
-              <h3 class="text-center text-xl text-gray-900 font-medium leading-8">Anthony Kubeka</h3>
-              <div class="text-center text-gray-400 text-xs font-semibold">
-                  <p class="mb-1">Software Engineer &bull; South Africa</p>
-              </div>
+              <h3 class="text-center text-xl text-gray-900 dark:text-white font-medium leading-8">Anthony Kubeka</h3>
+              <p class="text-center text-gray-400 text-xs font-semibold mb-1">Software Engineer &bull; South Africa</p>
               <div class="flex flex-row flex-grow justify-center overflow-x-auto">
                 @for (technology of technologies; track technology) {
                   <app-skills-card [technology]="technology"></app-skills-card>
@@ -12,7 +10,7 @@
               </div>
 
               <div class="text-center">
-                <a href="assets/CV_Anthony_Kubeka.pdf" download="CV_Anthony_Kubeka.pdf" class="text-xs text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium">Download CV</a>
+                <a href="assets/CV_Anthony_Kubeka.pdf" download="CV_Anthony_Kubeka.pdf" class="text-xs dark:text-white text-indigo-500 italic hover:underline font-medium">Download CV</a>
               </div>
 
           </div>

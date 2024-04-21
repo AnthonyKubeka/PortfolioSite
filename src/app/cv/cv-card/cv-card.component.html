@@ -1,11 +1,11 @@
 <div class="m-2 max-w-max grid grid-cols-1">
-  <div class="bg-white p-4 rounded-lg shadow-md">
+  <div class="p-4 rounded-lg shadow-md">
     <div class="flex gap-2">
       <div>
         <h3 class="text-lg font-semibold mb-1">{{cvCard?.heading}}</h3>
-        <p class="text-gray-600">{{cvCard?.place}}</p>
+        <p class="text-gray-500">{{cvCard?.place}}</p>
       </div>
-      <div class="text-gray-600">
+      <div class="text-gray-500">
         <span>{{cvCard?.startDate| date:'MMM y'}} -
           <span *ngIf="cvCard?.endDate">{{cvCard?.endDate| date: 'MMM y'}}</span>
           <span *ngIf="!cvCard?.endDate">Present</span>

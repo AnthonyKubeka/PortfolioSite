@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Anthony Kubeka — Senior Software Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Anthony Kubeka — Senior Software Developer based in South Africa. Event-driven microservices with .NET, Angular and Python, plus a GitOps-managed homelab.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="preload" as="image" href="assets/profile.png">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Anthony Kubeka — Senior Software Developer">
+  <meta property="og:description" content="Event-driven, full-stack engineer. .NET, Angular, Python, and self-hosted GitOps infrastructure.">
+  <meta property="og:type" content="website">
+</head>
+<body>
+  <header class="nav">
+    <a class="nav__brand" href="#top">Anthony Kubeka</a>
+    <nav class="nav__links">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+      <button id="theme-toggle" class="nav__theme" aria-label="Toggle dark mode" title="Toggle theme">
+        <span aria-hidden="true">◐</span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <img class="hero__photo" src="assets/profile.png" width="160" height="160" alt="Anthony Kubeka">
+      <h1 class="hero__name">Hi, I'm Anthony</h1>
+      <p class="hero__role">Senior Software Developer · South Africa</p>
+      <p class="hero__tagline">
+        I build event-driven, full-stack systems with .NET, Angular and Python —
+        and run a GitOps-managed homelab, my own cloud, for the love of it.
+      </p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#projects">View Projects</a>
+        <a class="btn" href="assets/CV_Anthony_Kubeka.pdf" download>Download CV</a>
+      </div>
+      <div class="socials">
+        <a href="https://github.com/AnthonyKubeka" aria-label="GitHub" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/anthony-kubeka/" aria-label="LinkedIn" rel="noopener">LinkedIn</a>
+        <a href="https://twitter.com/anthonykubeka" aria-label="X / Twitter" rel="noopener">X</a>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <h2 class="section__title">Projects</h2>
+      <div class="projects">
+
+        <article class="card card--featured">
+          <div class="card__badge">Featured</div>
+          <h3 class="card__title">Self-Hosted Homelab</h3>
+          <p class="card__desc">
+            A home server running my own cloud — media, file storage, home automation,
+            and DNS. Everything is infrastructure-as-code: I edit a config, commit, and
+            push; a CI runner picks it up and deploys it. The entire stack rebuilds from
+            git, so nothing lives only in my head.
+          </p>
+          <ul class="chips">
+            <li>Docker</li><li>GitOps</li><li>Linux</li><li>Caddy</li><li>CI/CD</li><li>Home Assistant</li>
+          </ul>
+          <div class="card__links">
+            <a href="https://github.com/AnthonyKubeka/homelab" rel="noopener">Source →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 class="card__title">This Portfolio</h3>
+          <p class="card__desc">
+            A fast, dependency-free static site — hand-written HTML and CSS, no framework,
+            deployed on Firebase Hosting. Rebuilt from an Angular app for near-instant loads.
+          </p>
+          <ul class="chips">
+            <li>HTML</li><li>CSS</li><li>Firebase</li>
+          </ul>
+          <div class="card__links">
+            <a href="https://github.com/AnthonyKubeka/PortfolioSite" rel="noopener">Source →</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <h2 class="section__title">Experience</h2>
+      <div class="timeline">
+
+        <article class="entry">
+          <div class="entry__head">
+            <h3 class="entry__role">Senior Software Developer</h3>
+            <span class="entry__meta">Trade Shield</span>
+            <span class="entry__date">Sep 2024 — Present</span>
+          </div>
+          <ul class="entry__duties">
+            <li>Built the debtor change orchestration system — a cross-team observability feature that audits business-process events and raises alerts, cutting client queries about where risk scores sat in the system by 64%.</li>
+            <li>Partnered with the CTO to build a custom event-driven orchestration microservice (à la MassTransit) using three-phase commits, event streams with slowly-changing dimensions, and the outbox pattern — supporting trade-credit recommendations worth nearly 7% of South Africa's GDP.</li>
+            <li>Led the technical split from a partner company, standing up independent Azure infrastructure (new tenant, CI/CD pipelines, VMs) using the Strangler Fig and facade patterns.</li>
+            <li>Turned black-box Python risk-scoring services into observable, event-driven FastAPI services with CI/CD; introduced team standards, PR templates, and Roslyn static analysis, and mentored junior and intermediate developers.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry__head">
+            <h3 class="entry__role">Intermediate Software Engineer</h3>
+            <span class="entry__meta">Entelect · Ninety One Investments</span>
+            <span class="entry__date">Jan 2023 — Aug 2024</span>
+          </div>
+          <ul class="entry__duties">
+            <li>Full-stack engineer (Angular + .NET Core) on Ninety One's investment platform, building micro-services and APIs for regulatory compliance, investment calculations and transactions on Microsoft Service Fabric.</li>
+            <li>Upgraded .NET 6 APIs and an Azure Function App to .NET 8, migrating the Function App from the in-process to the isolated worker model.</li>
+            <li>Built REST API endpoints and RxJS-driven Angular components that cut rejection rates of investment transactions, and shipped a manual-instruction submission feature using Azure Service Bus and Function Apps.</li>
+            <li>Resolved time-critical production issues in Azure CosmosDB and Function Apps, and mentored junior engineers on SOLID principles and best practices.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry__head">
+            <h3 class="entry__role">Software Engineer</h3>
+            <span class="entry__meta">Entelect · EasyEquities</span>
+            <span class="entry__date">Jan 2021 — Dec 2022</span>
+          </div>
+          <ul class="entry__duties">
+            <li>Enabled the milestone launch of EasyEquities' pension-fund platform, RISE, delivering full-stack features end to end.</li>
+            <li>Built an automated SignalR / NServiceBus / SQL Server pipeline to bulk-load thousands of members onto the system.</li>
+            <li>Wrote SQL Server stored procedures to transform SARS data, automating tax-form submission for claim withdrawals.</li>
+            <li>Improved code coverage with NUnit and Moq, and resolved production issues via Azure App Insights.</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section">
+      <h2 class="section__title">Education</h2>
+      <article class="entry">
+        <div class="entry__head">
+          <h3 class="entry__role">BSc, Computer Science</h3>
+          <span class="entry__meta">University of the Witwatersrand</span>
+          <span class="entry__date">2016 — 2020</span>
+        </div>
+        <p class="entry__sub">Computer Science · Computational &amp; Applied Mathematics · Mathematics</p>
+      </article>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <h2 class="section__title">Tech</h2>
+      <ul class="chips chips--lg">
+        <li>C# / .NET Core</li><li>Angular</li><li>TypeScript</li><li>Python / FastAPI</li>
+        <li>Event-Driven Architecture</li><li>Microservices</li><li>CQRS</li><li>MediatR</li>
+        <li>Azure</li><li>Cosmos DB</li><li>Azure Functions</li><li>SQL Server</li>
+        <li>Azure DevOps · CI/CD</li><li>Docker</li><li>Linux</li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section section--contact">
+      <h2 class="section__title">Get in touch</h2>
+      <p class="contact__line">Open to interesting problems and good teams.</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="mailto:anthonykubeka@gmail.com">Email me</a>
+        <a class="btn" href="https://www.linkedin.com/in/anthony-kubeka/" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="socials">
+      <a href="https://github.com/AnthonyKubeka" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/anthony-kubeka/" rel="noopener">LinkedIn</a>
+      <a href="https://twitter.com/anthonykubeka" rel="noopener">X</a>
+    </div>
+    <p class="footer__copy">© <span id="year">2026</span> Anthony Kubeka</p>
+  </footer>
+
+  <script>
+    // Theme: respect saved choice, else system preference.
+    (function () {
+      var root = document.documentElement;
+      var saved = localStorage.getItem('theme');
+      if (saved) root.setAttribute('data-theme', saved);
+      var btn = document.getElementById('theme-toggle');
+      btn.addEventListener('click', function () {
+        var current = root.getAttribute('data-theme');
+        if (!current) {
+          current = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        var next = current === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+      });
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>

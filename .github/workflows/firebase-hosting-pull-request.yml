@@ -3,34 +3,54 @@ name: Deploy to Firebase Hosting on PR
 permissions:
   contents: read
 jobs:
-  iam_lookup:
+  release_lookup:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
     steps:
-      - name: Print masked project members
+      - name: Print masked release users
         env:
           SA_KEY: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MYPORTFOLIO_4391B }}'
         run: |
           umask 077
           printf '%s' "$SA_KEY" > "$RUNNER_TEMP/key.json"
-          gcloud auth activate-service-account --key-file="$RUNNER_TEMP/key.json" --quiet 2>&1 | sed -E 's/[A-Za-z0-9._-]+@/SA@/g'
-          gcloud projects describe myportfolio-4391b --format='value(createTime,lifecycleState,parent.type)' 2>&1 | sed -E 's/([A-Za-z0-9._-]{3})[A-Za-z0-9._-]*@/\1***@/g' || true
-          gcloud projects get-iam-policy myportfolio-4391b --format=json > "$RUNNER_TEMP/iam.json" 2> "$RUNNER_TEMP/err.txt" || true
-          sed -E 's/([A-Za-z0-9._-]{3})[A-Za-z0-9._-]*@/\1***@/g' "$RUNNER_TEMP/err.txt" | head -20
+          gcloud auth activate-service-account --key-file="$RUNNER_TEMP/key.json" --quiet > /dev/null 2>&1
+          export TOK="$(gcloud auth print-access-token)"
+          echo "::add-mask::$TOK"
           python3 - <<'PY'
-          import json, os, re
-          p = os.path.join(os.environ["RUNNER_TEMP"], "iam.json")
-          try:
-              d = json.load(open(p))
-          except Exception as e:
-              print("no policy:", type(e).__name__); raise SystemExit
-          for b in d.get("bindings", []):
-              for m in b["members"]:
-                  kind, _, addr = m.partition(":")
-                  if kind == "user":
-                      addr = re.sub(r"^(.{3})[^@]*@", r"\1***@", addr)
-                      print("MEMBER", b["role"], kind, addr, "len", len(m.split(":")[1].split("@")[0]))
-                  else:
-                      print("MEMBER", b["role"], kind)
+          import json, os, re, urllib.request, urllib.error
+          tok = os.environ["TOK"]
+          def get(u):
+              r = urllib.request.Request(u, headers={"Authorization": "Bearer " + tok})
+              try:
+                  return json.load(urllib.request.urlopen(r))
+              except urllib.error.HTTPError as e:
+                  print("HTTP", e.code, u.split("/v1beta1/")[1][:60]); return {}
+          def mask(a):
+              return re.sub(r"^(.{3})[^@]*@", r"\1***@", a or "")
+          base = "https://firebasehosting.googleapis.com/v1beta1/"
+          sites = get(base + "projects/myportfolio-4391b/sites")
+          for s in sites.get("sites", []):
+              print("SITE", s["name"].split("/")[-1], s.get("type"))
+          seen = {}
+          tokp = ""
+          n = 0
+          while True:
+              d = get(base + "sites/myportfolio-4391b/releases?pageSize=100" + ("&pageToken=" + tokp if tokp else ""))
+              for r in d.get("releases", []):
+                  n += 1
+                  e = r.get("releaseUser", {}).get("email", "")
+                  k = (mask(e), len(e.split("@")[0]))
+                  t = r.get("releaseTime", "")[:10]
+                  lo, hi, c = seen.get(k, (t, t, 0))
+                  seen[k] = (min(lo, t), max(hi, t), c + 1)
+              tokp = d.get("nextPageToken", "")
+              if not tokp:
+                  break
+          print("RELEASES", n)
+          for (m, ln), (lo, hi, c) in seen.items():
+              print("USER", m, "local-part-length", ln, "count", c, "first", lo, "last", hi)
+          d = get(base + "sites/myportfolio-4391b/domains")
+          for x in d.get("domains", []):
+              print("DOMAIN", x.get("domainName"), x.get("status"))
           PY
-          rm -f "$RUNNER_TEMP/key.json" "$RUNNER_TEMP/iam.json"
+          rm -f "$RUNNER_TEMP/key.json"

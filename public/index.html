@@ -8,18 +8,23 @@
   <meta name="color-scheme" content="light dark">
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   <link rel="preload" as="image" href="assets/profile.png">
+  <link rel="preconnect" href="https://demo.anthonykubeka.com" crossorigin>
+  <link rel="stylesheet" href="https://demo.anthonykubeka.com/design/normandy.css">
   <link rel="stylesheet" href="styles.css">
   <meta property="og:title" content="Anthony Kubeka | Senior software engineer">
   <meta property="og:description" content="Event-driven systems in .NET, Python and Azure. At home: a server run by a crew of AI agents.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://anthonykubeka.com/">
   <script>
-    // Apply a saved theme before first paint. No saved choice: follow the system.
+    // Set the theme before first paint. A saved choice wins; otherwise follow the system.
+    // The design language is dark unless data-theme="light" is set, so always set it.
     (function () {
-      try {
-        var saved = localStorage.getItem('theme');
-        if (saved === 'light' || saved === 'dark') document.documentElement.setAttribute('data-theme', saved);
-      } catch (e) {}
+      var theme = null;
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
     })();
   </script>
 </head>
@@ -51,8 +56,8 @@
           At home I run Normandy: one server, and a crew of AI agents I direct from my phone.
         </p>
         <div class="cta">
-          <a class="btn btn--primary" href="https://demo.anthonykubeka.com">See Normandy live</a>
-          <a class="btn" href="assets/CV_Anthony_Kubeka.pdf" download>Download CV</a>
+          <a class="nd-btn" href="https://demo.anthonykubeka.com">See Normandy live</a>
+          <a class="nd-btn nd-btn--ghost" href="assets/CV_Anthony_Kubeka.pdf" download>Download CV</a>
         </div>
         <p class="socials">
           <a href="https://github.com/AnthonyKubeka" rel="noopener">GitHub</a>
@@ -97,7 +102,7 @@
         <h2>Normandy, the thing I build for myself</h2>
       </header>
 
-      <a class="feature" href="https://demo.anthonykubeka.com">
+      <a class="feature nd-dark nd-frame" href="https://demo.anthonykubeka.com">
         <div class="feature__text">
           <p class="feature__eyebrow"><span class="pulse" aria-hidden="true"></span>Live demo</p>
           <h3>One server in my house. A crew of AI agents runs it. I give the orders from my phone.</h3>
@@ -116,19 +121,19 @@
       </a>
 
       <div class="cards">
-        <article class="card">
+        <article class="card nd-frame">
           <h3>GitOps homelab</h3>
           <p>Every deploy starts with a commit. My own git server hands the job to a runner on the same box, and the runner redeploys only the stacks the commit touched. Critical services live apart from the ones that can fall over quietly.</p>
           <ul class="chips"><li>Docker</li><li>Forgejo</li><li>Caddy</li><li>Prometheus</li><li>Grafana</li><li>Home Assistant</li></ul>
           <p class="card__links"><a href="https://demo.anthonykubeka.com/#ship">How a change ships →</a> <a href="https://github.com/AnthonyKubeka/homelab" rel="noopener">Public mirror →</a></p>
         </article>
-        <article class="card">
+        <article class="card nd-frame">
           <h3>An agent crew with rules</h3>
           <p>I message a bot. A task runner picks an account, builds an isolated workspace and starts an agent. A second agent checks the result against my acceptance criteria. Anything on the ask-first list waits for me.</p>
           <ul class="chips"><li>Claude Code</li><li>Codex</li><li>MCP</li><li>Python</li><li>systemd</li><li>Telegram</li></ul>
           <p class="card__links"><a href="https://demo.anthonykubeka.com/#crew">How a request moves →</a></p>
         </article>
-        <article class="card">
+        <article class="card nd-frame">
           <h3>Shared memory for agents</h3>
           <p>One instruction file that every agent reads, enforced with symlinks and a pre-commit hook. One Markdown vault they all write to, with runbooks, an index and an audit log. I took the same idea to work, where it became a company adoption objective.</p>
           <ul class="chips"><li>Markdown</li><li>git</li><li>Agent skills</li><li>Runbooks</li></ul>
@@ -231,8 +236,8 @@
       <h2>Get in touch</h2>
       <p>Open to interesting problems and good teams.</p>
       <div class="cta">
-        <a class="btn btn--primary" href="mailto:anthonykubeka@gmail.com">Email me</a>
-        <a class="btn" href="https://www.linkedin.com/in/anthonykubeka" rel="noopener">LinkedIn</a>
+        <a class="nd-btn" href="mailto:anthonykubeka@gmail.com">Email me</a>
+        <a class="nd-btn nd-btn--ghost" href="https://www.linkedin.com/in/anthonykubeka" rel="noopener">LinkedIn</a>
       </div>
     </section>
   </main>

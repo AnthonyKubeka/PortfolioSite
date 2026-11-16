@@ -2,202 +2,283 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Anthony Kubeka — Senior Software Developer</title>
+  <title>Anthony Kubeka | Senior software engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Anthony Kubeka — Senior Software Developer based in South Africa. Event-driven microservices with .NET, Angular and Python, plus a GitOps-managed homelab.">
+  <meta name="description" content="Anthony Kubeka, senior software engineer in Johannesburg. Event-driven systems in .NET, Python and Azure, and a homelab that a crew of AI agents operates.">
   <meta name="color-scheme" content="light dark">
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   <link rel="preload" as="image" href="assets/profile.png">
+  <link rel="preconnect" href="https://demo.anthonykubeka.com" crossorigin>
+  <link rel="stylesheet" href="https://demo.anthonykubeka.com/design/normandy.css">
   <link rel="stylesheet" href="styles.css">
-  <!-- Open Graph -->
-  <meta property="og:title" content="Anthony Kubeka — Senior Software Developer">
-  <meta property="og:description" content="Event-driven, full-stack engineer. .NET, Angular, Python, and self-hosted GitOps infrastructure.">
+  <meta property="og:title" content="Anthony Kubeka | Senior software engineer">
+  <meta property="og:description" content="Event-driven systems in .NET, Python and Azure. At home: a server run by a crew of AI agents.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://anthonykubeka.com/">
+  <meta property="og:image" content="https://anthonykubeka.com/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script>
+    // Set the theme before first paint. A saved choice wins; otherwise follow the system.
+    // The design language is dark unless data-theme="light" is set, so always set it.
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
 </head>
 <body>
+  <a class="skip" href="#top">Skip to content</a>
+
   <header class="nav">
-    <a class="nav__brand" href="#top">Anthony Kubeka</a>
-    <nav class="nav__links">
-      <a href="#projects">Projects</a>
+    <a class="nav__brand" href="#top"><span class="stripe" aria-hidden="true"></span>Anthony Kubeka</a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="#results">Results</a>
+      <a href="#normandy">Normandy</a>
       <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
-      <button id="theme-toggle" class="nav__theme" aria-label="Toggle dark mode" title="Toggle theme">
+      <button id="theme-toggle" class="nav__theme" type="button" aria-label="Switch between light and dark">
         <span aria-hidden="true">◐</span>
       </button>
     </nav>
   </header>
 
   <main id="top">
-    <!-- Hero -->
+
+    <!-- ───────────── Hero ───────────── -->
     <section class="hero">
-      <img class="hero__photo" src="assets/profile.png" width="160" height="160" alt="Anthony Kubeka">
-      <h1 class="hero__name">Hi, I'm Anthony</h1>
-      <p class="hero__role">Senior Software Developer · South Africa</p>
-      <p class="hero__tagline">
-        I build event-driven, full-stack systems with .NET, Angular and Python —
-        and run a GitOps-managed homelab, my own cloud, for the love of it.
-      </p>
-      <div class="hero__cta">
-        <a class="btn btn--primary" href="#projects">View Projects</a>
-        <a class="btn" href="assets/CV_Anthony_Kubeka.pdf" download>Download CV</a>
-      </div>
-      <div class="socials">
-        <a href="https://github.com/AnthonyKubeka" aria-label="GitHub" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/anthony-kubeka/" aria-label="LinkedIn" rel="noopener">LinkedIn</a>
-        <a href="https://twitter.com/anthonykubeka" aria-label="X / Twitter" rel="noopener">X</a>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="section">
-      <h2 class="section__title">Projects</h2>
-      <div class="projects">
-
-        <article class="card card--featured">
-          <div class="card__badge">Featured</div>
-          <h3 class="card__title">Self-Hosted Homelab</h3>
-          <p class="card__desc">
-            A home server running my own cloud — media, file storage, home automation,
-            and DNS. Everything is infrastructure-as-code: I edit a config, commit, and
-            push; a CI runner picks it up and deploys it. The entire stack rebuilds from
-            git, so nothing lives only in my head.
-          </p>
-          <ul class="chips">
-            <li>Docker</li><li>GitOps</li><li>Linux</li><li>Caddy</li><li>CI/CD</li><li>Home Assistant</li>
-          </ul>
-          <div class="card__links">
-            <a href="https://github.com/AnthonyKubeka/homelab" rel="noopener">Source →</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3 class="card__title">This Portfolio</h3>
-          <p class="card__desc">
-            A fast, dependency-free static site — hand-written HTML and CSS, no framework,
-            deployed on Firebase Hosting. Rebuilt from an Angular app for near-instant loads.
-          </p>
-          <ul class="chips">
-            <li>HTML</li><li>CSS</li><li>Firebase</li>
-          </ul>
-          <div class="card__links">
-            <a href="https://github.com/AnthonyKubeka/PortfolioSite" rel="noopener">Source →</a>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- Experience -->
-    <section id="experience" class="section">
-      <h2 class="section__title">Experience</h2>
-      <div class="timeline">
-
-        <article class="entry">
-          <div class="entry__head">
-            <h3 class="entry__role">Senior Software Developer</h3>
-            <span class="entry__meta">Trade Shield</span>
-            <span class="entry__date">Sep 2024 — Present</span>
-          </div>
-          <ul class="entry__duties">
-            <li>Built the debtor change orchestration system — a cross-team observability feature that audits business-process events and raises alerts, cutting client queries about where risk scores sat in the system by 64%.</li>
-            <li>Partnered with the CTO to build a custom event-driven orchestration microservice (à la MassTransit) using three-phase commits, event streams with slowly-changing dimensions, and the outbox pattern — supporting trade-credit recommendations worth nearly 7% of South Africa's GDP.</li>
-            <li>Led the technical split from a partner company, standing up independent Azure infrastructure (new tenant, CI/CD pipelines, VMs) using the Strangler Fig and facade patterns.</li>
-            <li>Turned black-box Python risk-scoring services into observable, event-driven FastAPI services with CI/CD; introduced team standards, PR templates, and Roslyn static analysis, and mentored junior and intermediate developers.</li>
-          </ul>
-        </article>
-
-        <article class="entry">
-          <div class="entry__head">
-            <h3 class="entry__role">Intermediate Software Engineer</h3>
-            <span class="entry__meta">Entelect · Ninety One Investments</span>
-            <span class="entry__date">Jan 2023 — Aug 2024</span>
-          </div>
-          <ul class="entry__duties">
-            <li>Full-stack engineer (Angular + .NET Core) on Ninety One's investment platform, building micro-services and APIs for regulatory compliance, investment calculations and transactions on Microsoft Service Fabric.</li>
-            <li>Upgraded .NET 6 APIs and an Azure Function App to .NET 8, migrating the Function App from the in-process to the isolated worker model.</li>
-            <li>Built REST API endpoints and RxJS-driven Angular components that cut rejection rates of investment transactions, and shipped a manual-instruction submission feature using Azure Service Bus and Function Apps.</li>
-            <li>Resolved time-critical production issues in Azure CosmosDB and Function Apps, and mentored junior engineers on SOLID principles and best practices.</li>
-          </ul>
-        </article>
-
-        <article class="entry">
-          <div class="entry__head">
-            <h3 class="entry__role">Software Engineer</h3>
-            <span class="entry__meta">Entelect · EasyEquities</span>
-            <span class="entry__date">Jan 2021 — Dec 2022</span>
-          </div>
-          <ul class="entry__duties">
-            <li>Enabled the milestone launch of EasyEquities' pension-fund platform, RISE, delivering full-stack features end to end.</li>
-            <li>Built an automated SignalR / NServiceBus / SQL Server pipeline to bulk-load thousands of members onto the system.</li>
-            <li>Wrote SQL Server stored procedures to transform SARS data, automating tax-form submission for claim withdrawals.</li>
-            <li>Improved code coverage with NUnit and Moq, and resolved production issues via Azure App Insights.</li>
-          </ul>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- Education -->
-    <section id="education" class="section">
-      <h2 class="section__title">Education</h2>
-      <article class="entry">
-        <div class="entry__head">
-          <h3 class="entry__role">BSc, Computer Science</h3>
-          <span class="entry__meta">University of the Witwatersrand</span>
-          <span class="entry__date">2016 — 2020</span>
+      <div class="hero__text">
+        <p class="eyebrow">Senior software engineer <span class="sep">·</span> Johannesburg</p>
+        <h1>I build event&#8209;driven systems, and the tools that keep them honest.</h1>
+        <p class="lede">
+          Fintech and credit risk, in .NET, Python and Azure. TradeShield's Technologist of the Year for 2025.
+          At home I run Normandy: one server, and a crew of AI agents I direct from my phone.
+        </p>
+        <div class="cta">
+          <a class="nd-btn" href="https://demo.anthonykubeka.com">See Normandy live</a>
+          <a class="nd-btn nd-btn--ghost" href="assets/CV_Anthony_Kubeka.pdf" download>Download CV</a>
         </div>
-        <p class="entry__sub">Computer Science · Computational &amp; Applied Mathematics · Mathematics</p>
-      </article>
+        <p class="socials">
+          <a href="https://github.com/AnthonyKubeka" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/anthonykubeka" rel="noopener">LinkedIn</a>
+          <a href="https://twitter.com/anthonykubeka" rel="noopener">X</a>
+          <a href="mailto:anthonykubeka@gmail.com">Email</a>
+        </p>
+      </div>
+      <img class="hero__photo" src="assets/profile.png" width="370" height="480" alt="Anthony Kubeka">
     </section>
 
-    <!-- Skills -->
-    <section id="skills" class="section">
-      <h2 class="section__title">Tech</h2>
-      <ul class="chips chips--lg">
-        <li>C# / .NET Core</li><li>Angular</li><li>TypeScript</li><li>Python / FastAPI</li>
-        <li>Event-Driven Architecture</li><li>Microservices</li><li>CQRS</li><li>MediatR</li>
-        <li>Azure</li><li>Cosmos DB</li><li>Azure Functions</li><li>SQL Server</li>
-        <li>Azure DevOps · CI/CD</li><li>Docker</li><li>Linux</li>
-      </ul>
+    <!-- ───────────── Results ───────────── -->
+    <section id="results" class="section">
+      <header class="section__head">
+        <p class="num">01</p>
+        <h2>What changed because I was there</h2>
+      </header>
+      <dl class="results">
+        <div class="result">
+          <dt>fewer client and support queries in one programme increment, after I built tooling that shows why a risk score or credit limit changed.</dt>
+          <dd>64%</dd>
+        </div>
+        <div class="result">
+          <dt>or so, reclaimed from a 67 GB production database. Two audit tables were 86% of it. They stay bounded now, with scheduled retention.</dt>
+          <dd>26&nbsp;GB</dd>
+        </div>
+        <div class="result">
+          <dt>notification tasks hidden by a year-old defect, across 88 customer accounts. I disproved an earlier "no issue" ticket with data, and my remediation plan was adopted.</dt>
+          <dd>5,100</dd>
+        </div>
+        <div class="result">
+          <dt>to connect the platform to a major retail partner's SAP systems, in both directions.</dt>
+          <dd>&lt;2&nbsp;weeks</dd>
+        </div>
+      </dl>
     </section>
 
-    <!-- Contact -->
+    <!-- ───────────── Normandy ───────────── -->
+    <section id="normandy" class="section">
+      <header class="section__head">
+        <p class="num">02</p>
+        <h2>Normandy, the thing I build for myself</h2>
+      </header>
+
+      <a class="feature nd-dark nd-frame" href="https://demo.anthonykubeka.com">
+        <div class="feature__text">
+          <p class="feature__eyebrow"><span class="pulse" aria-hidden="true"></span>Live demo</p>
+          <h3>One server in my house. A crew of AI agents runs it. I give the orders from my phone.</h3>
+          <p>
+            Docker stacks deployed from git, monitoring that pages me, backups I restore-test, and agents that take a voice note
+            and come back with a verified result. The demo reads a live snapshot of the real system.
+          </p>
+          <span class="feature__go">Open demo.anthonykubeka.com <span aria-hidden="true">→</span></span>
+        </div>
+        <dl class="feature__stats" id="live-stats">
+          <div><dt>containers</dt><dd data-live="containers.running">60</dd></div>
+          <div><dt>stacks</dt><dd data-live="stacks.total_stacks">12</dd></div>
+          <div><dt>infra commits</dt><dd data-live="repo.commits">729</dd></div>
+          <div><dt>agent skills</dt><dd data-live="harness.skills_total">57</dd></div>
+        </dl>
+      </a>
+
+      <div class="cards">
+        <article class="card nd-frame">
+          <h3>GitOps homelab</h3>
+          <p>Every deploy starts with a commit. My own git server hands the job to a runner on the same box, and the runner redeploys only the stacks the commit touched. Critical services live apart from the ones that can fall over quietly.</p>
+          <ul class="chips"><li>Docker</li><li>Forgejo</li><li>Caddy</li><li>Prometheus</li><li>Grafana</li><li>Home Assistant</li></ul>
+          <p class="card__links"><a href="https://demo.anthonykubeka.com/#ship">How a change ships →</a> <a href="https://github.com/AnthonyKubeka/homelab" rel="noopener">Public mirror →</a></p>
+        </article>
+        <article class="card nd-frame">
+          <h3>An agent crew with rules</h3>
+          <p>I message a bot. A task runner picks an account, builds an isolated workspace and starts an agent. A second agent checks the result against my acceptance criteria. Anything on the ask-first list waits for me.</p>
+          <ul class="chips"><li>Claude Code</li><li>Codex</li><li>MCP</li><li>Python</li><li>systemd</li><li>Telegram</li></ul>
+          <p class="card__links"><a href="https://demo.anthonykubeka.com/#crew">How a request moves →</a></p>
+        </article>
+        <article class="card nd-frame">
+          <h3>Shared memory for agents</h3>
+          <p>One instruction file that every agent reads, enforced with symlinks and a pre-commit hook. One Markdown vault they all write to, with runbooks, an index and an audit log. I took the same idea to work, where it became a company adoption objective.</p>
+          <ul class="chips"><li>Markdown</li><li>git</li><li>Agent skills</li><li>Runbooks</li></ul>
+          <p class="card__links"><a href="https://demo.anthonykubeka.com/#memory">How the memory works →</a></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ───────────── Experience ───────────── -->
+    <section id="experience" class="section">
+      <header class="section__head">
+        <p class="num">03</p>
+        <h2>Experience</h2>
+      </header>
+
+      <div class="timeline">
+        <article class="role">
+          <header class="role__head">
+            <div>
+              <h3>Senior Software Developer</h3>
+              <p class="role__where">TradeShield <span class="sep">·</span> B2B SaaS for trade credit limits, 200+ clients</p>
+            </div>
+            <p class="role__when">Sep 2024 to now</p>
+          </header>
+          <ul class="role__list">
+            <li>Won TradeShield's <b>2025 Technologist of the Year</b> award.</li>
+            <li>Turned a "slow" credit-limit recommendation into a measured problem: a median of about 104 seconds, with about 7% inside the 1-minute target. I found the delay in one service and took polling off the critical path.</li>
+            <li>Prevented a production queue outage. Before a 180-item run, my end-to-end smoke-test rig exposed 2 defects in already-merged code that would have failed every retry message.</li>
+            <li>Stopped runaway database growth: reclaimed about 26 GB of a 67 GB database and shipped scheduled retention.</li>
+            <li>Gave the engineering team a shared memory: an agent-operated knowledge system with runbooks, incident records and session journals. The Head of Engineering now extends it with Jira-integrated agent skills.</li>
+            <li>Led the technical split from a partner company: a new Azure tenant, infrastructure, CI/CD pipelines and decoupled services, using the Strangler Fig and facade patterns.</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <header class="role__head">
+            <div>
+              <h3>Intermediate Software Engineer</h3>
+              <p class="role__where">Entelect <span class="sep">·</span> for Ninety One, a global investment manager</p>
+            </div>
+            <p class="role__when">Jan 2023 to Aug 2024</p>
+          </header>
+          <ul class="role__list">
+            <li>Reduced rejected investment transactions with new REST endpoints and RxJS-driven Angular components.</li>
+            <li>Cut manual quality-control work for investment instructions with web-based submission on Azure Service Bus and Azure Functions.</li>
+            <li>Made releases safer with a pipeline that compares Key Vault keys and secrets between test and production, so configuration drift shows up before release.</li>
+            <li>Upgraded APIs and a Function App from .NET 6 to .NET 8, including the move to the isolated worker model.</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <header class="role__head">
+            <div>
+              <h3>Software Engineer</h3>
+              <p class="role__where">Entelect <span class="sep">·</span> for EasyEquities, an online investment platform</p>
+            </div>
+            <p class="role__when">Jan 2021 to Dec 2022</p>
+          </header>
+          <ul class="role__list">
+            <li>Helped launch the RISE pension-fund platform, including the reactive Angular forms used to onboard funds and companies.</li>
+            <li>Automated bulk loading of thousands of pension-fund members with SignalR, NServiceBus and SQL Server.</li>
+            <li>Made tax-form submission automatic for claim withdrawals with SQL Server transformations of SARS integration data.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ───────────── Toolbox ───────────── -->
+    <section id="toolbox" class="section">
+      <header class="section__head">
+        <p class="num">04</p>
+        <h2>Toolbox</h2>
+      </header>
+      <div class="tools">
+        <div>
+          <h3>Backend</h3>
+          <ul class="chips"><li>C# / .NET</li><li>Python / FastAPI</li><li>Event-driven architecture</li><li>Microservices</li><li>CQRS</li><li>MediatR</li><li>OAuth2 / OIDC</li></ul>
+        </div>
+        <div>
+          <h3>Cloud and data</h3>
+          <ul class="chips"><li>Azure</li><li>Azure Functions</li><li>Service Bus</li><li>Cosmos DB</li><li>SQL Server</li><li>Azure DevOps</li><li>Docker</li><li>Linux</li></ul>
+        </div>
+        <div>
+          <h3>Frontend</h3>
+          <ul class="chips"><li>Angular</li><li>TypeScript</li><li>RxJS</li></ul>
+        </div>
+        <div>
+          <h3>AI-assisted engineering</h3>
+          <ul class="chips"><li>Claude Code</li><li>Agent skills</li><li>MCP</li><li>Codex</li></ul>
+        </div>
+      </div>
+      <p class="edu">
+        <b>BSc Computer Science</b>, University of the Witwatersrand, 2020
+        <span class="sep">·</span> Microsoft AZ-900
+      </p>
+    </section>
+
+    <!-- ───────────── Contact ───────────── -->
     <section id="contact" class="section section--contact">
-      <h2 class="section__title">Get in touch</h2>
-      <p class="contact__line">Open to interesting problems and good teams.</p>
-      <div class="hero__cta">
-        <a class="btn btn--primary" href="mailto:anthonykubeka@gmail.com">Email me</a>
-        <a class="btn" href="https://www.linkedin.com/in/anthony-kubeka/" rel="noopener">LinkedIn</a>
+      <h2>Get in touch</h2>
+      <p>Open to interesting problems and good teams.</p>
+      <div class="cta">
+        <a class="nd-btn" href="mailto:anthonykubeka@gmail.com">Email me</a>
+        <a class="nd-btn nd-btn--ghost" href="https://www.linkedin.com/in/anthonykubeka" rel="noopener">LinkedIn</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="socials">
-      <a href="https://github.com/AnthonyKubeka" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/anthony-kubeka/" rel="noopener">LinkedIn</a>
-      <a href="https://twitter.com/anthonykubeka" rel="noopener">X</a>
-    </div>
-    <p class="footer__copy">© <span id="year">2026</span> Anthony Kubeka</p>
+    <p>© <span id="year">2026</span> Anthony Kubeka <span class="sep">·</span> Hand-written HTML and CSS.</p>
   </footer>
 
   <script>
-    // Theme: respect saved choice, else system preference.
     (function () {
       var root = document.documentElement;
-      var saved = localStorage.getItem('theme');
-      if (saved) root.setAttribute('data-theme', saved);
-      var btn = document.getElementById('theme-toggle');
-      btn.addEventListener('click', function () {
-        var current = root.getAttribute('data-theme');
-        if (!current) {
-          current = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        }
+
+      // Theme toggle: saved choice wins, otherwise the system preference.
+      document.getElementById('theme-toggle').addEventListener('click', function () {
+        var current = root.getAttribute('data-theme') ||
+          (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         var next = current === 'dark' ? 'light' : 'dark';
         root.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
       });
+
       document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Live numbers from the demo's public snapshot. The HTML already holds
+      // fallback values, so a failed fetch changes nothing.
+      if (window.fetch) {
+        fetch('https://demo.anthonykubeka.com/data/snapshot.json')
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (snap) {
+            if (!snap) return;
+            [].forEach.call(document.querySelectorAll('[data-live]'), function (node) {
+              var v = node.getAttribute('data-live').split('.').reduce(function (o, k) { return o == null ? o : o[k]; }, snap);
+              if (typeof v === 'number') node.textContent = v.toLocaleString('en-US');
+            });
+          })
+          .catch(function () {});
+      }
     })();
   </script>
 </body>
